@@ -1,0 +1,10 @@
+# EXAMPLE data, invented for this demo.
+research_task:
+  description: Research {topic} and collect the main facts
+  expected_output: A list of 10 bullet points
+  agent: researcher
+report_task:
+  description: Write a one page report from the research
+  expected_output: A one-page report
+  agent: writer
+  context: [research_task]

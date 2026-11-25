@@ -1,0 +1,19 @@
+[project]
+name = "crew-config-lint"
+version = "0.1.0"
+description = "Offline linter for agents.yaml / tasks.yaml files of multi-agent projects"
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6"]
+
+[project.scripts]
+crew-config-lint = "crew_config_lint.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,12 @@
+# EXAMPLE data, invented for this demo.
+researcher:
+  role: "{topic} Researcher"
+  goal: Find facts about {topic}
+  backstory: Careful analyst.
+writer:
+  role: Writer
+  goal: Write the report
+reviewer:
+  role: Reviewer
+  goal: Check the report
+  backstory: Picky editor.
