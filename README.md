@@ -13,7 +13,7 @@ pip install -e .
 crew-config-lint path/to/project -i topic -i year
 ```
 
-The folder needs `agents.yaml` and `tasks.yaml`, either in the folder itself or in `config/`. Each `-i` names an input you pass at run time. With at least one `-i` (or `-i` alone with a made-up name), the `{placeholder}` checks turn on. Without `-i`, they stay off. Add `--json` for JSON output and `--strict` to fail on warnings too. Exit code: 0 clean, 1 findings, 2 files not found.
+The folder needs `agents.yaml` and `tasks.yaml`, either in the folder itself or in `config/`. Each `-i` names an input you pass at run time. Passing at least one `-i` turns on the `{placeholder}` checks. Without `-i`, they stay off. Add `--json` for JSON output and `--strict` to fail on warnings too. Exit code: 0 clean, 1 findings, 2 files not found.
 
 Try the examples (invented data):
 
@@ -46,6 +46,6 @@ Doubled braces (`{{key}}`) are not treated as placeholders.
 ## What was not tested
 
 - Real projects. I did not run it on any real customer or company config.
-- Whether the rules match what the CrewAI framework itself accepts. I wrote them from the common file layout, not from the framework source. A field the framework allows may show up here as a finding, and the reverse.
+- Whether the rules match what the CrewAI framework itself accepts. I wrote them from the common file layout, not from the framework source. The tool may flag something the framework accepts, and it may miss something the framework rejects.
 - Other YAML fields (tools, LLM names, `async_execution`, and so on). The tool ignores them.
 - Very large files, YAML anchors in unusual places, and Windows paths.
